@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "amd",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "aurelia-pal-browser": ["node_modules/aurelia-pal-browser"],
+      "aurelia-framework": ["node_modules/aurelia-framework"],
+      "aurelia-logging-console": ["node_modules/aurelia-logging-console"],
+      "utils/*": ["src/utils/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "aurelia_project",
+    "wwwroot"
+  ],
+  "filesGlob": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+    "./custom_typings/**/*.d.ts",
+    "./node_modules/@types/node/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
