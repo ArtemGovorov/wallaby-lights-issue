@@ -14,7 +14,6 @@ const path = require('path');
 
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
 var wallabyWebpack = require('wallaby-webpack');
-const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = function (wallaby) {
     process.env.NODE_PATH += path.delimiter + wallaby.projectCacheDir;
@@ -25,16 +24,7 @@ module.exports = function (wallaby) {
                 interact: path.resolve(__dirname, "node_modules", "interactjs", "dist", "interact.js"),
                 "jquery-ui-dist": path.resolve(__dirname, "node_modules", "jquery-ui-dist", "jquery-ui.js")
             },
-            extensions: ['.ts', '.js'],
-            modules: [path.join(wallaby.projectCacheDir, 'src'), 'node_modules'],
-            plugins: [
-                new TsConfigPathsPlugin()
-            ]
-        },
-        module: {
-            rules: [
-                { test: /\.ts$/i, loader: 'awesome-typescript-loader' }
-            ]
+            modules: [path.join(wallaby.projectCacheDir, 'src'), 'node_modules']
         }
     });
 
